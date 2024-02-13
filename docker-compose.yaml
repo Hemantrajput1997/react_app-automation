@@ -1,0 +1,8 @@
+version: "2"
+services:
+  webapp:
+    ports:
+      - "5173:5173"
+    image: "react:dev"
+    tty: true
+    container_name: "server1"
