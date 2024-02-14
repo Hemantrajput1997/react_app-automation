@@ -1,5 +1,4 @@
 #! /bin/bash
-
 docker-compose down
 docker rmi react:dev
 cd /var/www/html/react
