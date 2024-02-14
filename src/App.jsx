@@ -15,6 +15,7 @@ const App = () => {
 	  <h2> serverrrrrrrr</h2>
 	  <h2>hemant</h2>
 	  <h3> small text in h3 tag</h3>
+	  <h1> Hello my name is akshay </h1>
       <span>
         <Trans
           // i18nKey={"description.line1"}
