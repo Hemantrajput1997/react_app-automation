@@ -3,3 +3,5 @@ this project to deploy react application using automation in a Devlopenvironment
 Updated upstream
 new changes
 
+to run Script sudo /var/www/html/react/exec.sh
+
