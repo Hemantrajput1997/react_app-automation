@@ -11,8 +11,7 @@ const App = () => {
       <LanguageSelector />
       <h1>{t("greeting")}</h1>
 	  <h1>new changes</h1>
-	   <h1>automation testing</h1>
-	  <h2> serverrrrrrrr</h2>
+	    <h1>automation testing</h1>
 	  <h2>hemant</h2>
       <span>
         <Trans
