@@ -6,3 +6,4 @@ services:
     image: "react:dev"
     tty: true
     container_name: "server1"
+      
