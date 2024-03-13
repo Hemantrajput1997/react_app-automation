@@ -1,29 +1,27 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: Deploy to AWS
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Change this to your main branch name
 
 jobs:
-  build:
-
-    runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  deploy:
+    runs-on: Linux
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH key
+      uses: webfactory/ssh-agent@v0.5.3
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-  
+        ssh-private-key: ${{ secrets.KEY_AWS }}
+        # You'll need to add the corresponding public key to your AWS server's authorized_keys files
+
+    - name: Deploy to AWS
+      run: |
+        ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/ ec2-user@3.144.172.89  "
+        cd /var/www/html/react 
+        sudo /var/www/html/react/exec.sh
+        
