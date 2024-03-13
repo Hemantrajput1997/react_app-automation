@@ -23,5 +23,5 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/ ec2-user@3.144.172.89  "
         cd /var/www/html/react 
-        sudo /var/www/html/react/exec.sh
+        sudo /var/www/html/react/exec.sh   "
         
