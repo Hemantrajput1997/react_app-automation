@@ -16,7 +16,7 @@ jobs:
     - name: Set up SSH key
       uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.KEY_AWS }}
+        ssh-private-key: ${{ secrets.KEY }}
         # You'll need to add the corresponding public key to your AWS server's authorized_keys files
 
     - name: Deploy to AWS
