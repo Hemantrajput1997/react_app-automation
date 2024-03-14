@@ -23,4 +23,4 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/ ubuntu@3.147.68.157 "
         cd /var/www/html/test
-        sudo mkdir folder
+        sudo mkdir folder   "
